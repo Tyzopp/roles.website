@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Roles</title>
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            overflow-x: hidden;
+            overflow-y: scroll;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #0f131b;
+            color: #ffffff;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            background-color: #0f131b;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            height: 56px;
+        }
+
+        .navbar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 32px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        .navbar-logo img {
+            width: 24px;
+            height: 24px;
+            transition: opacity 0.2s ease;
+        }
+
+        .navbar-logo:hover img {
+            opacity: 0.8;
+        }
+
+        .navbar-nav {
+            display: flex;
+            list-style: none;
+            gap: 48px;
+        }
+
+        .navbar-nav li {
+            margin: 0;
+        }
+
+        .navbar-nav a {
+            display: block;
+            padding: 8px 0;
+            color: #9ca3af;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 400;
+            transition: color 0.2s ease;
+        }
+
+        .navbar-nav a:hover,
+        .navbar-nav a.active {
+            color: #ffffff;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        header {
+            padding: 120px 0 40px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease-out 0.2s forwards;
+        }
+
+        .page-title {
+            font-size: 48px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .page-subtitle {
+            font-size: 18px;
+            color: #a1a1aa;
+            margin-bottom: 32px;
+        }
+
+        main {
+            flex: 1;
+            padding-bottom: 60px;
+        }
+
+        .legal-section {
+            background-color: #201c24;
+            border: 1px solid #201c24;
+            border-radius: 12px;
+            padding: 40px;
+            margin: 0 0 40px 0;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease-out 0.4s forwards;
+        }
+
+        .legal-section h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #ffffff;
+            margin: 32px 0 16px 0;
+        }
+
+        .legal-section h3:first-child {
+            margin-top: 0;
+        }
+
+        .legal-section p {
+            color: #d1d5db;
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+
+        .legal-section ul {
+            margin: 16px 0 24px 0;
+            padding-left: 20px;
+        }
+
+        .legal-section li {
+            color: #d1d5db;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        .legal-section a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+
+        .legal-section a:hover {
+            opacity: 0.8;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-container {
+                padding: 0 20px;
+            }
+
+            .navbar-nav {
+                display: none;
+                position: absolute;
+                top: 56px;
+                left: 0;
+                right: 0;
+                background-color: #0f131b;
+                flex-direction: column;
+                gap: 0;
+                padding: 16px 0;
+            }
+
+            .navbar-nav.show {
+                display: flex;
+            }
+
+            .navbar-nav a {
+                padding: 12px 32px;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+
+            header {
+                padding: 100px 0 30px;
+            }
+
+            .page-title {
+                font-size: 36px;
+            }
+
+            .page-subtitle {
+                font-size: 16px;
+            }
+
+            .legal-section {
+                padding: 32px 24px;
+            }
+
+            .legal-section h3 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="../" class="navbar-logo">
+                <img src="../assets/favicon.ico" alt="Roles Logo">
+            </a>
+            
+            <ul class="navbar-nav">
+                <li><a href="../about/">About</a></li>
+                <li><a href="https://status.roles.website/" target="_blank">Status</a></li>
+                <li><a href="../legal/">Legal</a></li>
+            </ul>
+
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <h1 class="page-title">Privacy Policy</h1>
+            <p class="page-subtitle">How we handle your data when using Roles Bot</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="legal-section">
+                <h3>Data Collection</h3>
+                <ul>
+                    <li>The bots may store certain server-level data necessary to operate their features effectively.</li>
+                    <li>This includes configuration settings and other information required to maintain functionality.</li>
+                    <li>We do not collect or store personal user data beyond what is essential for the bot's operation within Discord servers.</li>
+                </ul>
+
+                <h3>Data Retention</h3>
+                <ul>
+                    <li>Data is retained only while the bot remains active in the server.</li>
+                    <li>If the bot is removed, all associated data is automatically and permanently deleted.</li>
+                    <li>We do not retain backups or historical data from servers once the bot has been uninstalled.</li>
+                </ul>
+
+                <h3>Data Deletion Requests</h3>
+                <ul>
+                    <li>Server owners and administrators may request deletion of stored data at any time.</li>
+                    <li>Requests will be handled within a reasonable timeframe and confirmed upon completion.</li>
+                </ul>
+
+                <h3>Use of Data</h3>
+                <ul>
+                    <li>Stored data is used exclusively to deliver the core functionality of the bots and ensure consistent performance.</li>
+                    <li>The data is never used for analytics, profiling, or shared with third parties.</li>
+                    <li>No form of data monetization or external processing is performed.</li>
+                </ul>
+
+                <h3>Platform and Security</h3>
+                <ul>
+                    <li>The bots operate fully within the Discord platform and depend on Discord's API infrastructure.</li>
+                    <li>All usage is subject to <a href="https://discord.com/terms" target="_blank">Discord's Terms of Service</a> and <a href="https://discord.com/privacy" target="_blank">Privacy Policy</a>.</li>
+                    <li>Internal measures are in place to prevent unauthorized access and ensure the integrity and confidentiality of all stored information.</li>
+                </ul>
+
+                <h3>Acceptance & Changes</h3>
+                <ul>
+                    <li>By using the Roles Bot, you agree to the terms outlined in this Privacy Policy. This policy describes how data is handled when you use our services.</li>
+                    <li>This Privacy Policy may be updated at any time. Continued use of the bots following any changes constitutes acceptance of the revised policy.</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        function toggleMobileMenu() {
+            const nav = document.querySelector('.navbar-nav');
+            nav.classList.toggle('show');
+        }
+
+        document.addEventListener('click', function(event) {
+            const nav = document.querySelector('.navbar-nav');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (!nav.contains(event.target) && !toggle.contains(event.target)) {
+                nav.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>

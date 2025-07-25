@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Roles</title>
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            overflow-x: hidden;
+            overflow-y: scroll;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #0f131b;
+            color: #ffffff;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            background-color: #0f131b;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            height: 56px;
+        }
+
+        .navbar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 32px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        .navbar-logo img {
+            width: 24px;
+            height: 24px;
+            transition: opacity 0.2s ease;
+        }
+
+        .navbar-logo:hover img {
+            opacity: 0.8;
+        }
+
+        .navbar-nav {
+            display: flex;
+            list-style: none;
+            gap: 48px;
+        }
+
+        .navbar-nav li {
+            margin: 0;
+        }
+
+        .navbar-nav a {
+            display: block;
+            padding: 8px 0;
+            color: #9ca3af;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 400;
+            transition: color 0.2s ease;
+        }
+
+        .navbar-nav a:hover,
+        .navbar-nav a.active {
+            color: #ffffff;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        main {
+            flex: 1;
+            padding: 120px 0 60px;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 60px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease-out 0.2s forwards;
+        }
+
+        .page-title {
+            font-size: 48px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .page-subtitle {
+            font-size: 20px;
+            color: #a1a1aa;
+            margin-bottom: 32px;
+        }
+
+        .content-section {
+            background-color: #201c24;
+            border: 1px solid #201c24;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 32px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .content-section:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .content-section:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .content-section:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        .content-section:nth-child(5) {
+            animation-delay: 1s;
+        }
+
+        .content-section h2 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .content-section p {
+            color: #d1d5db;
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+
+        .content-section ul {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+
+        .content-section li {
+            color: #d1d5db;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin: 40px 0;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease-out 0.6s forwards;
+        }
+
+        .feature-card {
+            background-color: #201c24;
+            border: 1px solid #201c24;
+            border-radius: 8px;
+            padding: 32px;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 160px;
+        }
+
+        .feature-card:hover {
+            border-color: #2a252e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: #9ca3af;
+            font-size: 14px;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-container {
+                padding: 0 20px;
+            }
+
+            .navbar-nav {
+                display: none;
+                position: absolute;
+                top: 56px;
+                left: 0;
+                right: 0;
+                background-color: #0f131b;
+                flex-direction: column;
+                gap: 0;
+                padding: 16px 0;
+            }
+
+            .navbar-nav.show {
+                display: flex;
+            }
+
+            .navbar-nav a {
+                padding: 12px 32px;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+
+            main {
+                padding: 100px 0 40px;
+            }
+
+            .page-title {
+                font-size: 36px;
+            }
+
+            .page-subtitle {
+                font-size: 18px;
+            }
+
+            .content-section {
+                padding: 32px 24px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="../" class="navbar-logo">
+                <img src="../assets/favicon.ico" alt="Roles Logo">
+            </a>
+            
+            <ul class="navbar-nav">
+                <li><a href="../about/" class="active">About</a></li>
+                <li><a href="https://status.roles.website/" target="_blank">Status</a></li>
+                <li><a href="../legal/">Legal</a></li>
+            </ul>
+
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <header class="page-header">
+                <h1 class="page-title">About Roles</h1>
+                <p class="page-subtitle">Powerful Discord role management made simple</p>
+            </header>
+
+            <section class="content-section">
+                <h2>What is Roles?</h2>
+                <p>Roles is a Discord bot designed to automate and streamline role management in your Discord server. Whether you're running a small community or a large server with thousands of members, Roles helps you manage permissions, assign roles efficiently, and maintain organized server hierarchies.</p>
+                <p>Built with precision and reliability in mind, Roles offers a comprehensive set of features that make Discord server administration effortless and intuitive.</p>
+            </section>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>Auto Roles</h3>
+                    <p>Automatically assign up to 10 roles to new members when they join your server. Configure whether to include or exclude bots from receiving these roles.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Reaction Roles</h3>
+                    <p>Set up interactive reaction roles on any message with up to 50 configurations per server. Choose from toggle, add-only, remove-only, or reverse modes.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Sticky Roles</h3>
+                    <p>Automatically re-assign up to 10 roles to users who previously had them when they rejoin your server. User data is safely stored for 14 days after leaving.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Configuration Management</h3>
+                    <p>Easily view all your role configurations with detailed listings and remove specific settings or reset everything when needed. Full control over your server's role automation.</p>
+                </div>
+            </div>
+
+            <section class="content-section">
+                <h2>Getting Started</h2>
+                <p>Ready to transform your Discord server management? Adding Roles to your server takes just a few clicks:</p>
+                <ul>
+                    <li>Click "Add to Server" and select your Discord server</li>
+                    <li>Grant the necessary permissions for Roles to function properly</li>
+                    <li>Configure your preferred role management settings using our slash commands</li>
+                    <li>Start enjoying automated, efficient role management</li>
+                </ul>
+                <p>Need help getting started? Join our support server where our community and team are ready to assist you every step of the way.</p>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        function toggleMobileMenu() {
+            const nav = document.querySelector('.navbar-nav');
+            nav.classList.toggle('show');
+        }
+
+        document.addEventListener('click', function(event) {
+            const nav = document.querySelector('.navbar-nav');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (!nav.contains(event.target) && !toggle.contains(event.target)) {
+                nav.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>
